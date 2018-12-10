@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import com.fdmgroup.model.Booking;
+import com.fdmgroup.model.Seating;
 
 public class BookingDao {
 private DbConnection connection = null;
@@ -67,6 +68,15 @@ private DbConnection connection = null;
 		em.getTransaction().commit();
 		em.close();
 	}
-	
+	public List<Booking> findByUserId(int userid) {
+		EntityManager em = connection.getEntityManager();
+		TypedQuery<Booking> query = em.createNamedQuery("Booking.findByUserId", Booking.class);
+		query.setParameter("uid", userid);
+		//User user = query.getSingleResult();
+		List<Booking> movies = query.getResultList();
+		em.close();
+		
+		return movies;
+	}
 	
 }

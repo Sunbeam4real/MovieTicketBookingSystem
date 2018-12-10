@@ -82,6 +82,7 @@ public class UserDao {
 	}
 	
 	public void update(User user) {
+		System.out.println("update");
 		EntityManager em = connection.getEntityManager();
 		User foundUser = em.find(User.class, user.getId());
 		em.getTransaction().begin();

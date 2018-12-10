@@ -13,6 +13,7 @@ import javax.persistence.Table;
 @Table(name = "JPA_BOOKING")
 @NamedQueries({
 	@NamedQuery(name = "Booking.findAll", query = "SELECT b FROM Booking b"),
+	@NamedQuery(name = "Booking.findByUserId", query = "SELECT b FROM Booking b WHERE b.userid = :uid")
 })
 public class Booking {
 	@Id

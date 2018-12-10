@@ -43,7 +43,7 @@ public class PurchaseServlet extends HttpServlet{
 				
 			}
 
-			RequestDispatcher rd = request.getRequestDispatcher("success.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 			rd.forward(request, response);
 			
 		}
