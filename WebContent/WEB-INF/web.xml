@@ -37,6 +37,14 @@
     <url-pattern>/movie</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>modify</servlet-name>
+    <servlet-class>com.fdmgroup.servlet.ModifyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>modify</servlet-name>
+    <url-pattern>/modify</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>register</servlet-name>
     <servlet-class>com.fdmgroup.servlet.RegisterServlet</servlet-class>
   </servlet>
