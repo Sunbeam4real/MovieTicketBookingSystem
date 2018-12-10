@@ -71,12 +71,11 @@ a{
 </head>
 <body>
 
-	<form id="loginform" method="get" action="login">
-	<input type="text" class="input" placeholder="Username" name="username" /> 
-	<input type="password" class="input" placeholder="Password" name = "password"/>
-	<input type="submit" class="loginbutton" value="SIGN IN" />
-	${error}
+	<form id="loginform" method="get" action="modify">
+	<input type="text" class="input" placeholder="New First name" name="fname" /> 
+	<input type="text" class="input" placeholder="New Last name" name="lname" /> 	
+	<input type="password" class="input" placeholder="New Password" name = "newp"/>
+	<input type="submit" class="loginbutton" value="Confirm" />
 	</form>
-<a href="#">Click here for new users</a>
 </body>
 </html>

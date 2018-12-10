@@ -61,6 +61,12 @@
 			table tr:nth-child(odd) td {
 				background-color: #e7edf0;
 			}
+			
+			#subbtn {
+				text-align:center;
+				    background-color: #black;
+				
+			}
 		</style>
 	</head>
 	<body>
@@ -123,8 +129,11 @@
 				              </tr>
 				              
 				              <%}%>
+				          <tr>
+				          
+				          </tr>
 			    	</table>
-			    	<input type="submit" value="Book" />
+			    	<input id="subbtn" type="submit" value="Book" />
 		    	</form>
 		    </div>
 		    
