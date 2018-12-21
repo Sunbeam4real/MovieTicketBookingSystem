@@ -27,7 +27,9 @@ public class RegisterServlet extends HttpServlet{
 		
 			HttpSession session = req.getSession();
 			session.setAttribute("loggedInUser",u);
-			RequestDispatcher rd = req.getRequestDispatcher("welcome.jsp");
+			session.setAttribute("username", username);
+
+			RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
 			rd.forward(req, res);
 			
 			

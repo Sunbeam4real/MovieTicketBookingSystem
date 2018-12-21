@@ -57,11 +57,19 @@ public class MovieDao {
 		return true;
 	}
 	
+	
+	
 	public void update(Movie m) {
 		EntityManager em = connection.getEntityManager();
 		Movie foundMovie = em.find(Movie.class, m.getId());
+		
 		em.getTransaction().begin();
+		if (foundMovie == null) {
+			em.persist(m);
+		} else {
 		if (m.getCatagory() != null && !m.getCatagory().equals(""))
+			System.out.println(foundMovie.getCatagory());
+			System.out.println(m.getCatagory());
 			foundMovie.setCatagory(m.getCatagory());
 		if (m.getMoviename() != null && !m.getMoviename().equals(""))
 			foundMovie.setMoviename(m.getMoviename());;
@@ -72,7 +80,13 @@ public class MovieDao {
 			foundMovie.setDirector(m.getDirector());
 		if (m.getLength() != null && !m.getLength().equals(""))
 			foundMovie.setLength(m.getLength());
-		
+		if (m.getDes() != null && !m.getDes().equals(""))
+			foundMovie.setDes(m.getDes());
+		if (m.getOnshow() != null && !m.getOnshow().equals(""))
+			foundMovie.setOnshow(m.getOnshow());
+		if (m.getLink() != null && !m.getLink().equals(""))
+				foundMovie.setLink(m.getLink());
+		}
 		em.getTransaction().commit();
 		em.close();
 	}
